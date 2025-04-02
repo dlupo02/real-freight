@@ -17,6 +17,7 @@
                     <p>Reliable, Efficient, Affordable Logistics</p>
                 </div>
             </div>
+            <button class="hamburger">☰</button>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -95,5 +96,12 @@
             <p>© 2025 R.E.A.L Freight Solutions. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
