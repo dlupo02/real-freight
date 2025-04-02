@@ -91,6 +91,16 @@ nav ul li a:hover {
     color: #F97316;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -288,21 +298,20 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
         padding: 10px;
         height: auto; /* Allow header height to adjust on mobile */
     }
 
     header .container {
-        flex-direction: column;
+        flex-direction: row; /* Keep logo and hamburger menu on the same row */
         align-items: center;
         height: auto; /* Remove fixed height for mobile */
     }
 
     .logo {
-        flex-direction: column;
+        flex-direction: row; /* Keep logo image and text side by side */
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     .logo-image {
@@ -317,19 +326,37 @@ footer p {
         font-size: 0.7em;
     }
 
+    /* Hamburger Menu for Mobile */
+    .hamburger {
+        display: block;
+    }
+
     nav ul {
+        display: none; /* Hide the menu by default */
         flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 15px;
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: #1E3A8A;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
     }
 
     nav ul li a {
-        font-size: 1em; /* Adjust font size for mobile */
+        font-size: 1.2em; /* Larger font for better tap targets */
+        padding: 10px;
+        display: block;
     }
 
     .hero {
         height: 70vh;
-        margin-top: 140px; /* Adjust for taller header on mobile */
+        margin-top: 100px; /* Adjust for shorter header with hamburger menu */
     }
 
     .hero-content h1 {
@@ -338,10 +365,12 @@ footer p {
 
     .hero-content p {
         font-size: 1em;
+        padding: 0 10px; /* Add padding for better readability */
     }
 
     .cta-button {
-        padding: 10px 20px;
+        padding: 12px 25px;
+        font-size: 1em;
     }
 
     .services, .about, .contact {
@@ -351,12 +380,33 @@ footer p {
     .services h2, .about h2, .contact h2 {
         font-size: 2em;
     }
+
+    .services-grid {
+        gap: 20px;
+    }
+
+    .service-item {
+        padding: 15px;
+    }
+
+    .service-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .service-item h3 {
+        font-size: 1.3em;
+    }
+
+    .service-item p {
+        font-size: 0.95em;
+    }
 }
 
 @media (max-width: 480px) {
     .hero {
         height: 60vh;
-        margin-top: 120px;
+        margin-top: 90px; /* Adjust for smaller screens */
     }
 
     .hero-content h1 {
@@ -389,5 +439,9 @@ footer p {
 
     .logo-text p {
         font-size: 0.6em;
+    }
+
+    nav ul {
+        top: 70px; /* Adjust for smaller header height */
     }
 }
