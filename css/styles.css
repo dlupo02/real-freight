@@ -34,18 +34,43 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px; /* Fixed height for consistent centering */
 }
 
-.logo h1 {
-    font-size: 1.8em;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+}
+
+.logo-image {
+    height: 60px; /* Increase logo size */
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text h1 {
+    font-size: 1.5em; /* Slightly smaller to fit better */
     font-weight: 600;
     color: #F97316;
+    margin: 0;
 }
 
-.logo p {
-    font-size: 0.9em;
+.logo-text p {
+    font-size: 0.8em;
     font-weight: 300;
-    margin-top: 5px;
+    margin: 0;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -58,6 +83,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 400;
+    font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
@@ -264,11 +290,31 @@ footer p {
     header {
         flex-direction: column;
         padding: 10px;
+        height: auto; /* Allow header height to adjust on mobile */
     }
 
     header .container {
         flex-direction: column;
         align-items: center;
+        height: auto; /* Remove fixed height for mobile */
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .logo-image {
+        height: 50px; /* Slightly smaller logo for mobile */
+    }
+
+    .logo-text h1 {
+        font-size: 1.3em;
+    }
+
+    .logo-text p {
+        font-size: 0.7em;
     }
 
     nav ul {
@@ -277,9 +323,13 @@ footer p {
         margin-top: 10px;
     }
 
+    nav ul li a {
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+
     .hero {
         height: 70vh;
-        margin-top: 120px; /* Adjust for taller header on mobile */
+        margin-top: 140px; /* Adjust for taller header on mobile */
     }
 
     .hero-content h1 {
@@ -306,7 +356,7 @@ footer p {
 @media (max-width: 480px) {
     .hero {
         height: 60vh;
-        margin-top: 100px;
+        margin-top: 120px;
     }
 
     .hero-content h1 {
@@ -327,5 +377,17 @@ footer p {
 
     .service-item p {
         font-size: 0.9em;
+    }
+
+    .logo-image {
+        height: 40px; /* Even smaller for very small screens */
+    }
+
+    .logo-text h1 {
+        font-size: 1.1em;
+    }
+
+    .logo-text p {
+        font-size: 0.6em;
     }
 }
